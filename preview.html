@@ -1,0 +1,75 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8"><head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href=".libs/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href=".libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+
+<nav navbar class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Manage</a></li>
+            <li><a href="#">Preview</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="panel panel-default">
+        <!--div class="panel-heading">Panel heading without title</div-->
+            <div class="panel-body" image-list>
+                <image-item-lg ng-repeat="image in imageList.images track by $index"
+                    img-id="{{image.id}}"
+                    img-url="{{image.url}}"
+                    img-title="{{image.title}}"
+                    img-description="{{image.description}}">
+                </image-item>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+    Template for image-item-lg
+-->
+<script type="text/ng-template" id="tpl-image-item-lg">
+    <div class="preview-img-holder">
+        <h4 class="preview-img-title">{{title}}</h4>
+        <img class="preview-image" ng-src="{{url}}" />
+        <div class="preview-image__info {{expanded}}">
+            <div class="preview-image__info-bage">
+                <span class="preview-image__info-bage-sign glyphicon glyphicon-info-sign"></span>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        </div>
+    </div>
+</script>
+
+<script type="text/javascript" src=".libs/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src=".libs/underscore-min.js"></script>
+<script type="text/javascript" src=".libs/angular.min.js"></script>
+<script type="text/javascript" src=".libs/angular-mocks.js"></script>
+<script type="text/javascript" src=".libs/angular-route.min.js"></script>
+
+<!--script type="text/javascript" src="js/index.js"></script-->
+
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/modules/$srv-base.js"></script>
+<script type="text/javascript" src="js/modules/$srv-modals.js"></script>
+<script type="text/javascript" src="js/modules/$srv-image-list.js"></script>
+<script type="text/javascript" src="js/modules/navbar.js"></script>
+<script type="text/javascript" src="js/modules/image-list.js"></script>
+<script type="text/javascript" src="js/modules/image-item-add-new.js"></script>
+<script type="text/javascript" src="js/modules/image-item-lg.js"></script>
+<script type="text/javascript" src="js/modules/image-dialog.js"></script>
+<script type="text/javascript" src="js/modules/confirm.js"></script>
+
+</body>
+</html>

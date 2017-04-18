@@ -1,0 +1,126 @@
+<div class="container">
+    <div class="panel panel-default">
+        <!--div class="panel-heading">Panel heading without title</div-->
+            <div class="panel-body" image-list>
+                <image-item-add-new></image-item-add-new>
+                <image-item ng-repeat="image in imageList.images track by $index"
+                    img-id="{{image.id}}"
+                    img-url="{{image.url}}"
+                    img-title="{{image.title}}"
+                    img-description="{{image.description}}">
+                </image-item>
+            </div>
+        </div>
+    </div>
+</div>
+
+<confirm></confirm>
+
+<!--
+    Template for image-item-add-new
+-->
+<script type="text/ng-template" id="tpl-image-item-add-new">
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+        <a href="#" class="thumbnail button__add-new">
+            <div class="img-holder img-holder__add-new"><span class="glyphicon glyphicon-plus"></span></div>
+        </a>
+    </div>
+</script>
+
+<!--
+    Template for image-item
+-->
+<script type="text/ng-template" id="tpl-image-item">
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+        <a href="#" class="thumbnail">
+            <div class="img-holder">
+                <img ng-src="{{url}}" width="256" />
+                <div image-actions class="image-actions">
+                    <span class="image-action__button image-action__button-edit glyphicon glyphicon-pencil" data-action="edit"></span>
+                    <span class="image-action__button image-action__button-delete glyphicon glyphicon-trash" data-action="delete"></span>
+                    <span class="image-action__button image-action__button-cancel glyphicon glyphicon-share-alt" data-action="cancel"></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</script>
+
+<!--
+    Template for confirm dialog
+-->
+<script type="text/ng-template" id="tpl-confirm">
+    <div class="modal">
+        <div class="modal-overlay"></div>
+        <div class="content-fluid col-md-3 col-sm-5 col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{title}}</div>
+                <div class="panel-body">
+                    <p class="lead dialog-content">{{content}}</p>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="pull-right">
+                                <button class="btn btn-primary btn-sm dialog__button dialog__button-yes" data-action="confirm">Yes</button>
+                                <button class="btn btn-default btn-sm dialog__button dialog__button-no" data-action="cancel">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<div image-dialog class="modal">
+    <div class="modal-overlay"></div>
+
+    <div class="image-dialog">
+        <form id="frmImageDialog" name="frmImageDialog" role="form" class="form-horizontal image-deialog__form" novalidate>
+            <div class="panel panel-default image-dialog__panel">
+                <div class="panel-heading">{{dialogTitle}}</div>
+                <div class="panel-body">
+                    <div class="thumbnail">
+                        <div class="img-holder">
+                            <img class="image-preview" ng-src="{{image.url}}" width="256"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-deialog__info">
+                    <div class="form-group row has-feedback">
+                        <label for="imageUrl" class="col-sm-2 control-label image-dialog__label">Image URL</label>
+                        <div class="col-sm-10">
+                            <input type="text" ng-model="image.url" ng-model-options="{updateOn: 'blur'}" id="imageUrl" name="imageUrl" class="form-control" placeholder="Image URL" autocomplete="off" required>
+                            <span ng-show="frmImageDialog.imageUrl.$valid" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row has-feedback">
+                        <label for="imageTitle" class="col-sm-2 control-label image-dialog__label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" ng-model="image.title" id="imageTitle" name="imageTitle" class="form-control" placeholder="Title" autocomplete="off" required>
+                            <span ng-show="frmImageDialog.imageTitle.$valid" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row has-feedback">
+                        <label for="imageDescription" class="col-sm-2 control-label image-dialog__label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea rows="4" ng-model="image.description" id="imageDescription" name="imageDescription" class="form-control" placeholder="Description" autocomplete="off" required></textarea>
+                            <span ng-show="frmImageDialog.imageDescription.$valid" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="pull-right">
+                                <button type="submit" name="btnSave"  class="btn btn-primary btn-sm dialog__button dialog__button-save" ng-disabled="frmImageDialog.$invalid">Save</button>
+                                <button type="button" name="btnCancel" class="btn btn-default btn-sm dialog__button dialog__button-cancel">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,229 @@
+html, body {
+    height: 100%;
+}
+
+body    {
+    font: 13px verdana;
+    color: #000;
+    background: #606060;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    /*background: #606060;*/
+}
+
+.content-container {
+    padding-top: 60px;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+}
+
+.panel {
+    margin-top: 20px;
+}
+
+.panel-heading {
+    width: 100%;
+}
+
+.panel-body {
+    text-align: center;
+    padding-top: 48px;
+}
+
+.preview-img-holder {
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-img-holder:last-child {
+    margin-bottom: 0;
+}
+
+.preview-img-title {
+    color: #fff;
+    background: #000;
+    opacity: 0.75;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.preview-image__info {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -160px;
+    -webkit-transition:  bottom 0.2s;
+    transition: bottom 0.2s;
+    z-index: 1;
+}
+
+.preview-image__info.expanded {
+    bottom: 0px;
+    -webkit-transition:  bottom 0.2s;
+    transition: bottom 0.2s;
+}
+
+.preview-image__info-bage {
+    background: #000;
+    border-radius: 8px 8px 0 0;
+    width: 64px;
+    height: 48px;
+    opacity: 0.75;
+    margin: auto;
+    cursor: pointer;
+}
+
+.preview-image__info-bage-sign {
+    font-size: 24px;
+    color: #fff;
+    margin: 12px auto;
+}
+
+.preview-image__info p {
+    color: #fff;
+    background: #000;
+    text-align: justify;
+    opacity: 0.75;
+    height: 168px;
+    line-height: 20px;
+    padding: 24px 10px;
+}
+
+.thumbnail {
+    display: inline-block;
+}
+
+.thumbnail-selected {
+    background: #337ab7;
+}
+
+.img-holder {
+    background: #e0e0e0;
+    width: 256px;
+    height: 256px;
+    line-height: 256px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-actions {
+    font-size: 200%;
+    background: rgba(0, 0, 0, 0.65);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.thumbnail-selected .image-actions {
+    display: block;
+}
+
+.image-action__button {
+    color: #e0e0e0;
+    margin: 0 20px;
+}
+
+.image-action__button:hover {
+    color: #0c8;
+}
+
+.glyphicon-plus {
+    color: #999;
+    font-size: 64px;
+    vertical-align: middle;
+}
+
+.img-holder img {
+    vertical-align: middle;
+    margin: auto;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-overlay {
+    background: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+}
+
+.dialog-content {
+    color: #404040;
+}
+
+.dialog__button {
+    min-width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-control-feedback.glyphicon-ok {
+    color: #008000;
+}
+
+.image-dialog {
+    width: 640px;
+    z-index: 1;
+}
+
+.image-dialog__panel {
+    /*
+    background: #f0f0f0 url(https://image.freepik.com/free-vector/colorful-abstract-background_1207-180.jpg) no-repeat;
+    */
+    background: #f0f0f0 url(http://www.webdesignhot.com/wp-content/uploads/2015/01/Abstract-Colorful-Tech-Background-Vector-Illustration.jpg) no-repeat;
+    /*
+    background: #f0f0f0 url(http://media.istockphoto.com/vectors/abstract-colorful-wave-check-technology-pattern-background-vector-id497256299) 50% 50% no-repeat;
+    */
+    /*
+    background: #f0f0f0 url(http://www.webdesignhot.com/wp-content/uploads/2015/01/Abstract-Colorful-Tech-Background-Vector-Illustration.jpg) no-repeat;
+    */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.image-deialog__info {
+    padding: 0 10px;
+}
+
+.image-dialog__label {
+    padding: 0 0 5px 0;
+}
+
+.image-dialog__button {
+    width: 100px;
+}

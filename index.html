@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8"><head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href=".libs/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href=".libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+
+<nav navbar class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#/manage">Manage</a></li>
+            <li><a href="#/previw">Preview</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ng-view></ng-view>
+
+<script type="text/javascript" src=".libs/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src=".libs/underscore-min.js"></script>
+<script type="text/javascript" src=".libs/angular.min.js"></script>
+<script type="text/javascript" src=".libs/angular-mocks.js"></script>
+<script type="text/javascript" src=".libs/angular-route.min.js"></script>
+
+
+<!--script type="text/javascript" src="js/index.js"></script-->
+
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/modules/$srv-base.js"></script>
+<script type="text/javascript" src="js/modules/$srv-modals.js"></script>
+<script type="text/javascript" src="js/modules/$srv-image-list.js"></script>
+<script type="text/javascript" src="js/modules/navbar.js"></script>
+<script type="text/javascript" src="js/modules/image-list.js"></script>
+<script type="text/javascript" src="js/modules/image-item-add-new.js"></script>
+<script type="text/javascript" src="js/modules/image-item-sm.js"></script>
+<script type="text/javascript" src="js/modules/image-item-lg.js"></script>
+<script type="text/javascript" src="js/modules/image-dialog.js"></script>
+<script type="text/javascript" src="js/modules/confirm.js"></script>
+
+</body>
+</html>

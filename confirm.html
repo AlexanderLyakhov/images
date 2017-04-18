@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8"><head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href=".libs/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href=".libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+<div class="modal">
+    <div class="modal-overlay"></div>
+        <div class="content-fluid col-md-3 col-sm-5 col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Confirm</div>
+                <div class="panel-body"><p class="lead text-danger">Are you sure?</p></div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="pull-right">
+                                <button name="btnOk" class="btn btn-primary btn-sm dialog__button dialog__button-yes" ng-disabled="frmImageDialog.$invalid">Yes</button>
+                                <button name="btnNo" class="btn btn-default btn-sm dialog__button dialog__button-cancel">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src=".libs/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src=".libs/underscore-min.js"></script>
+<script type="text/javascript" src=".libs/angular.min.js"></script>
+
+<!--script type="text/javascript" src="js/all.js"></script-->
+
+<script type="text/javascript" src="js/start.js"></script>
+<script type="text/javascript" src="js/modules/$srv-base.js"></script>
+<script type="text/javascript" src="js/modules/$srv-image-list.js"></script>
+<script type="text/javascript" src="js/modules/image-list.js"></script>
+<script type="text/javascript" src="js/modules/image-item-add-new.js"></script>
+<script type="text/javascript" src="js/modules/image-item.js"></script>
+<script type="text/javascript" src="js/modules/image-dialog.js"></script>
+
+</body>
+</html>

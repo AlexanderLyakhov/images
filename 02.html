@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="panel panel-default">
+        <!--div class="panel-heading">Panel heading without title</div-->
+            <div class="panel-body" image-list>
+                <image-item-lg ng-repeat="image in imageList.images track by $index"
+                    img-id="{{image.id}}"
+                    img-url="{{image.url}}"
+                    img-title="{{image.title}}"
+                    img-description="{{image.description}}">
+                </image-item>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+    Template for image-item-lg
+-->
+<script type="text/ng-template" id="tpl-image-item-lg">
+    <div class="preview-img-holder">
+        <h4 class="preview-img-title">{{title}}</h4>
+        <img class="preview-image" ng-src="{{url}}" />
+        <div class="preview-image__info {{expanded}}">
+            <div class="preview-image__info-bage">
+                <span class="preview-image__info-bage-sign glyphicon glyphicon-info-sign"></span>
+            </div>
+            <!--p>{{description}}</p-->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        </div>
+    </div>
+</script>
